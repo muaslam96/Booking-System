@@ -1,5 +1,7 @@
 package com.bookingsystem;
 
+import java.util.HashMap;
+
 public class BookSeat {
     private String userId;
 
@@ -17,4 +19,14 @@ public class BookSeat {
     public void showBooking() {
         System.out.println("Booking for user: " + userId);
     }
+    
+    public String bookSeatsforUser(String userId) {
+    	
+    	 HashMap<String, String> seatBookings = new HashMap<>();
+    	 
+    	 //seatBookings.put(userId, "")
+    	
+    	return userId;
+    }
+    
 }
