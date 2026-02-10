@@ -3,7 +3,9 @@ package com.bookingsystem;
 import java.util.HashMap;
 
 public class BookSeat {
+    
     private String userId;
+    HashMap<String, String> seatBookings = new HashMap<>();
 
     // Constructor
     public BookSeat(String userId) {
@@ -22,7 +24,7 @@ public class BookSeat {
     
     public void bookSeatsforUser(String userId, String seatNumber) {
     	
-    	 HashMap<String, String> seatBookings = new HashMap<>();
+        System.out.println("The seat number being passed for booking seats is : "+ seatNumber);
     	 
     	 if (!seatBookings.containsKey(userId)) {
     		    seatBookings.put(userId, seatNumber);
@@ -32,6 +34,16 @@ public class BookSeat {
     		}
     	 
     	
+    }
+
+    public void cancelUserBooking(String userId){
+        
+        if (seatBookings.containsKey(userId)) {
+    		    seatBookings.remove(userId);
+    		    System.out.println("Your booking has been canceled");
+    		} else {
+    		    System.out.println("You have no previous booking available");
+    		}
     }
     
     

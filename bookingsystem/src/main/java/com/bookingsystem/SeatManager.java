@@ -35,5 +35,17 @@ public class SeatManager {
 		System.out.println("Available Seat Number : "+seatNumber);
 		return seatNumber;
 	}
+
+	public boolean checkUserSeatAvailability(String userSeat) {
+		int seat = Integer.parseInt(userSeat);
+		boolean seatsAvailable = false;
+		if(seats[seat] == 0){
+			seatsAvailable = true;
+		}
+
+		System.out.println("Your desired seat is available");
+
+		return seatsAvailable;
+	}
 	
 }

@@ -16,6 +16,7 @@ public class Main {
     	Scanner scanner = new Scanner(System.in);
     	
         String seatNumber;
+        String userSeat;
         
         System.out.println("Welcome. Please enter your user ID : ");
         String userId = scanner.nextLine();
@@ -25,9 +26,26 @@ public class Main {
         
         //Check for seat availability
         SeatManager seatManager = new SeatManager();
-        seatNumber = Integer.toBinaryString(seatManager.checkSeatAvailability());
+        seatNumber = Integer.toString(seatManager.checkSeatAvailability());
         
         BookSeat booking = new BookSeat(userId);
         booking.bookSeatsforUser(userId, seatNumber);
+
+        System.out.println("Welcome. Please enter desired seat number : ");
+        userSeat = scanner.nextLine();
+
+        //Now we need to check if the seat the user is looking for available or not.
+        boolean availability = seatManager.checkUserSeatAvailability(userSeat);
+
+        if(availability){
+            booking.bookSeatsforUser(userId, userSeat);
+        }
+        else{
+            System.out.println("Your desired seat is not available");
+        }
+
+
+        //Cancelling user booking
+        booking.cancelUserBooking(userId);
     }
 }
