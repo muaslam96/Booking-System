@@ -13,17 +13,17 @@ public class SeatManager {
 		
 	}
 	
-	public void checkSeatAvailability() {
+	public int checkSeatAvailability() {
 		
 		boolean seatsAvailable = false;
+		int seatNumber = 0;
 		
-		for(int i=0; i<seats.length; i++) {
-			
+		for(int i=14; i<seats.length; i--) {
 			if(seats[i] == 0) {
+				seatNumber = i+1;
 				seatsAvailable = true;
 				break;
-			}
-			
+			}	
 		}
 		
 		if(seatsAvailable) {
@@ -32,6 +32,8 @@ public class SeatManager {
 		else {
 			System.out.println("No seat is available. SORRY");
 		}
+		System.out.println("Available Seat Number : "+seatNumber);
+		return seatNumber;
 	}
 	
 }

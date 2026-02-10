@@ -15,14 +15,19 @@ public class Main {
         
     	Scanner scanner = new Scanner(System.in);
     	
-        int userID;
-        System.out.println("Welcome. Please enter your user ID : \n");
+        String seatNumber;
+        
+        System.out.println("Welcome. Please enter your user ID : ");
         String userId = scanner.nextLine();
+        
+        //System.out.println("Welcome. Please enter your desired seat number : ");
+        //String userSeat = scanner.nextLine();
         
         //Check for seat availability
         SeatManager seatManager = new SeatManager();
-        seatManager.checkSeatAvailability();
+        seatNumber = Integer.toBinaryString(seatManager.checkSeatAvailability());
         
-        
+        BookSeat booking = new BookSeat(userId);
+        booking.bookSeatsforUser(userId, seatNumber);
     }
 }

@@ -20,13 +20,20 @@ public class BookSeat {
         System.out.println("Booking for user: " + userId);
     }
     
-    public String bookSeatsforUser(String userId) {
+    public void bookSeatsforUser(String userId, String seatNumber) {
     	
     	 HashMap<String, String> seatBookings = new HashMap<>();
     	 
-    	 //seatBookings.put(userId, "")
+    	 if (!seatBookings.containsKey(userId)) {
+    		    seatBookings.put(userId, seatNumber);
+    		    System.out.println("Seat Number "+seatNumber+" has been booked.");
+    		} else {
+    		    System.out.println("User already has a seat booked!");
+    		}
+    	 
     	
-    	return userId;
     }
+    
+    
     
 }
