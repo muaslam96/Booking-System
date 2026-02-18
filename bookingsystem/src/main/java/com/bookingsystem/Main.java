@@ -2,6 +2,9 @@ package com.bookingsystem;
 
 import java.util.Scanner;
 
+import com.testproblems.Palindrome;
+import com.testproblems.ThreeSum;
+
 public class Main {
     public static void main(String[] args) {
         
@@ -13,7 +16,7 @@ public class Main {
         //Furthermore, if the user does not have any preference for a seat number then the last available seat will be 
         //assigned to his ID. The user can also cancel his booking anytime he wants.
         
-    	Scanner scanner = new Scanner(System.in);
+    	/*Scanner scanner = new Scanner(System.in);
     	
         String seatNumber;
         String userSeat;
@@ -46,6 +49,13 @@ public class Main {
 
 
         //Cancelling user booking
-        booking.cancelUserBooking(userId);
+        booking.cancelUserBooking(userId);*/
+
+        //************************** Checking Palindrome sequence for a given number **************************
+        //System.out.println("status : "+ new Palindrome().isPalindrome(12321) );
+
+        //************************** Checking the 3sum of an array **************************
+        System.out.println(new ThreeSum().threeSum(new int[]{2,-3,0,-2,-5,-5,-4,1,2,-2,2,0,2,-4,5,5,-10}));
+
     }
 }
